@@ -105,7 +105,7 @@ function placeOrder() {
 }
 
 // Confirm Order
-document.getElementById("order-form").addEventListener("submit", function(event) {
+document.getElementById("https://script.google.com/macros/s/AKfycbzkAxd23n5tRqj6-SlxSV9wI4qhVKZg8tRlRWnECURVMa3nGgipH4DpcUcwb1uWzp-pzA/exec").addEventListener("submit", function(event) {
 
     event.preventDefault();
 
