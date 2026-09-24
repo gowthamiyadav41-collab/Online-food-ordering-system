@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Online Food Ordering System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🍔 Online Food Ordering System</h1>
+        <p>Delicious food delivered to your doorstep!</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#cart">Cart</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Welcome to Our Food Ordering System</h2>
+        <p>Order your favourite food easily and quickly.</p>
+
+        <a href="#menu">
+            <button>Order Now</button>
+        </a>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>🍽️ Our Menu</h2>
+
+        <!-- Food Item 1 -->
+        <div class="food-item">
+            <h3>🍕 Pizza</h3>
+            <p>Delicious cheese pizza with fresh toppings.</p>
+            <p><strong>₹199</strong></p>
+            <button onclick="addToCart('Pizza', 199)">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Food Item 2 -->
+        <div class="food-item">
+            <h3>🍔 Burger</h3>
+            <p>Fresh and tasty chicken burger.</p>
+            <p><strong>₹129</strong></p>
+            <button onclick="addToCart('Burger', 129)">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Food Item 3 -->
+        <div class="food-item">
+            <h3>🍚 Biryani</h3>
+            <p>Hot and delicious chicken biryani.</p>
+            <p><strong>₹180</strong></p>
+            <button onclick="addToCart('Biryani', 180)">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Food Item 4 -->
+        <div class="food-item">
+            <h3>🍟 French Fries</h3>
+            <p>Crispy and tasty French fries.</p>
+            <p><strong>₹99</strong></p>
+            <button onclick="addToCart('French Fries', 99)">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Food Item 5 -->
+        <div class="food-item">
+            <h3>🥤 Soft Drink</h3>
+            <p>Chilled refreshing soft drink.</p>
+            <p><strong>₹50</strong></p>
+            <button onclick="addToCart('Soft Drink', 50)">
+                Add to Cart
+            </button>
+        </div>
+
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart">
+        <h2>🛒 Your Cart</h2>
+
+        <div id="cart-items">
+            <p>Your cart is empty.</p>
+        </div>
+
+        <h3>Total: ₹<span id="total">0</span></h3>
+
+        <button onclick="placeOrder()">
+            Place Order
+        </button>
+    </section>
+
+    <!-- Customer Details -->
+    <section id="customer">
+        <h2>👤 Customer Details</h2>
+
+        <form id="order-form">
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required>
+
+            <br><br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required>
+
+            <br><br>
+
+            <label for="address">Delivery Address:</label><br>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <br><br>
+
+            <button type="submit">
+                Confirm Order
+            </button>
+
+        </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>📞 Contact Us</h2>
+        <p>Phone: 9052295519</p>
+        <p>Email: foodorder@example.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Online Food Ordering System</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
