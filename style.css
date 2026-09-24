@@ -1,153 +1,208 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* General Page Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <title>Online Food Ordering System</title>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
 
-    <link rel="stylesheet" href="style.css">
-</head>
+/* Header */
+header {
+    background-color: #ff6b35;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
 
-<body>
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
 
-    <!-- Header -->
-    <header>
-        <h1>🍔 Online Food Ordering System</h1>
-        <p>Delicious food delivered to your doorstep!</p>
-    </header>
+header p {
+    font-size: 18px;
+}
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#cart">Cart</a>
-        <a href="#contact">Contact</a>
-    </nav>
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-    <!-- Home Section -->
-    <section id="home">
-        <h2>Welcome to Our Food Ordering System</h2>
-        <p>Order your favourite food easily and quickly.</p>
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        <a href="#menu">
-            <button>Order Now</button>
-        </a>
-    </section>
+nav a:hover {
+    color: #ff6b35;
+}
 
-    <!-- Menu Section -->
-    <section id="menu">
-        <h2>🍽️ Our Menu</h2>
+/* Sections */
+section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
 
-        <!-- Food Item 1 -->
-        <div class="food-item">
-            <h3>🍕 Pizza</h3>
-            <p>Delicious cheese pizza with fresh toppings.</p>
-            <p><strong>₹199</strong></p>
-            <button onclick="addToCart('Pizza', 199)">
-                Add to Cart
-            </button>
-        </div>
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff6b35;
+}
 
-        <!-- Food Item 2 -->
-        <div class="food-item">
-            <h3>🍔 Burger</h3>
-            <p>Fresh and tasty chicken burger.</p>
-            <p><strong>₹129</strong></p>
-            <button onclick="addToCart('Burger', 129)">
-                Add to Cart
-            </button>
-        </div>
+/* Home Section */
+#home {
+    text-align: center;
+    padding: 50px 20px;
+}
 
-        <!-- Food Item 3 -->
-        <div class="food-item">
-            <h3>🍚 Biryani</h3>
-            <p>Hot and delicious chicken biryani.</p>
-            <p><strong>₹180</strong></p>
-            <button onclick="addToCart('Biryani', 180)">
-                Add to Cart
-            </button>
-        </div>
+#home h2 {
+    font-size: 30px;
+}
 
-        <!-- Food Item 4 -->
-        <div class="food-item">
-            <h3>🍟 French Fries</h3>
-            <p>Crispy and tasty French fries.</p>
-            <p><strong>₹99</strong></p>
-            <button onclick="addToCart('French Fries', 99)">
-                Add to Cart
-            </button>
-        </div>
+#home p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
 
-        <!-- Food Item 5 -->
-        <div class="food-item">
-            <h3>🥤 Soft Drink</h3>
-            <p>Chilled refreshing soft drink.</p>
-            <p><strong>₹50</strong></p>
-            <button onclick="addToCart('Soft Drink', 50)">
-                Add to Cart
-            </button>
-        </div>
+/* Buttons */
+button {
+    background-color: #ff6b35;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
 
-    </section>
+button:hover {
+    background-color: #e85a2a;
+}
 
-    <!-- Cart Section -->
-    <section id="cart">
-        <h2>🛒 Your Cart</h2>
+/* Food Menu */
+#menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
 
-        <div id="cart-items">
-            <p>Your cart is empty.</p>
-        </div>
+#menu h2 {
+    grid-column: 1 / -1;
+}
 
-        <h3>Total: ₹<span id="total">0</span></h3>
+.food-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+}
 
-        <button onclick="placeOrder()">
-            Place Order
-        </button>
-    </section>
+.food-item h3 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
 
-    <!-- Customer Details -->
-    <section id="customer">
-        <h2>👤 Customer Details</h2>
+.food-item p {
+    margin-bottom: 8px;
+}
 
-        <form id="order-form">
+/* Cart */
+#cart {
+    text-align: center;
+}
 
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required>
+#cart-items {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
 
-            <br><br>
+/* Customer Form */
+#customer form {
+    max-width: 600px;
+    margin: auto;
+}
 
-            <label for="phone">Phone Number:</label><br>
-            <input type="tel" id="phone" name="phone" required>
+#customer label {
+    font-weight: bold;
+}
 
-            <br><br>
+#customer input,
+#customer textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
 
-            <label for="address">Delivery Address:</label><br>
-            <textarea id="address" name="address" rows="4" required></textarea>
+#customer textarea {
+    resize: vertical;
+}
 
-            <br><br>
+/* Contact */
+#contact {
+    text-align: center;
+}
 
-            <button type="submit">
-                Confirm Order
-            </button>
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
 
-        </form>
-    </section>
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>📞 Contact Us</h2>
-        <p>Phone: 9052295519</p>
-        <p>Email: foodorder@example.com</p>
-    </section>
+    header h1 {
+        font-size: 24px;
+    }
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Online Food Ordering System</p>
-    </footer>
+    header p {
+        font-size: 16px;
+    }
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
 
-</body>
-</html>
+    #menu {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        margin: 20px 10px;
+        padding: 20px 15px;
+    }
+
+    #home h2 {
+        font-size: 24px;
+    }
+}
